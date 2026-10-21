@@ -1,0 +1,33 @@
+{
+  "name": "bm-crm",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "preview": "npx @cloudflare/next-on-pages",
+    "deploy": "npx @cloudflare/next-on-pages && npx wrangler pages deploy .vercel/output/static",
+    "db:init": "npx wrangler d1 execute bm-crm-db --local --file=./db/schema.sql",
+    "db:seed": "npx wrangler d1 execute bm-crm-db --local --file=./db/seed.sql",
+    "db:init:remote": "npx wrangler d1 execute bm-crm-db --remote --file=./db/schema.sql",
+    "db:seed:remote": "npx wrangler d1 execute bm-crm-db --remote --file=./db/seed.sql"
+  },
+  "dependencies": {
+    "@cloudflare/next-on-pages": "^1.13.0",
+    "jspdf": "^2.5.1",
+    "next": "^14.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240512.0",
+    "@types/node": "^20.12.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/uuid": "^9.0.8",
+    "typescript": "^5.4.0",
+    "wrangler": "^3.57.0"
+  }
+}

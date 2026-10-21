@@ -1,0 +1,15 @@
+name = "bm-crm"
+compatibility_date = "2024-05-12"
+compatibility_flags = ["nodejs_compat"]
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "bm-crm-db"
+database_id = "YOUR_D1_DATABASE_ID"  # Replace after: npx wrangler d1 create bm-crm-db
+
+# R2 Bucket
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "bm-crm-photos"
+# Replace after: npx wrangler r2 bucket create bm-crm-photos
